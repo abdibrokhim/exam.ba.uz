@@ -1,0 +1,95 @@
+
+Queries:
+
+    1. SQL haqida ma'lumot bering
+    2. Web scraping haqida ma'lumot bering
+    3. Regular expressions haqida ma'lumot bering
+    4. Botga yozilgan xabarni teskarisini qaytaradigan telegram bot tuzing
+
+Answers:
+
+    1. SQL - Structured Query Language. SQL is a language used to communicate with databases.
+        It is used to query, insert, update, and delete data in a database.
+        SQL is a standard language for storing, manipulating and retrieving data in databases.
+
+        1.1. Example:
+
+                CREATE TABLE table_name (
+                    column1 datatype,
+                    column2 datatype,
+                    column3 datatype,
+                    ....
+                );
+                SELECT column_name FROM table_name;
+                SELECT * FROM table_name;  # Selects all rows from a table
+                SELECT column_name FROM table_name WHERE condition;  # Selects only the rows that satisfy the condition
+                SELECT column_name FROM table_name LIMIT number;  # Selects only the first number of rows
+                SELECT column_name FROM table_name WHERE condition LIMIT number;  # Selects only the first number of rows that satisfy the condition
+                INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...);  # Inserts a row into a table
+                UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;  # Updates rows in a table
+                DELETE FROM table_name WHERE condition;  # Deletes rows from a table
+
+        1.2. In Usage:
+
+                CREATE TABLE FRUITS (
+                    ID INT PRIMARY KEY NOT NULL,
+                    NAME TEXT NOT NULL,
+                    PRICE INT NOT NULL
+                );
+
+                INSERT INTO FRUITS (ID, NAME, PRICE) VALUES (1, 'Apple', 100);
+                INSERT INTO FRUITS (ID, NAME, PRICE) VALUES (2, 'Orange', 150);
+                INSERT INTO FRUITS (ID, NAME, PRICE) VALUES (3, 'Banana', 200);
+
+                SELECT * FROM FRUITS;
+
+                UPDATE FRUITS SET PRICE = 250 WHERE ID = 3;
+
+                DELETE FROM FRUITS WHERE ID = 2;
+
+    2. Web scraping is a technique to automatically access and extract large amounts of information from a website,
+        which can save a huge amount of time and effort. Web scraping is a technique to automatically access
+        and extract large amounts of information from a website, which can save a huge amount of time and effort.
+
+        2.1. Example:
+
+                import requests  # to get the html
+                from bs4 import BeautifulSoup  # pip install bs4
+                url = 'https://www.example.com'  # url
+                response = requests.get(url)  # get the html
+                soup = BeautifulSoup(response.text, 'html.parser')  # parse the html
+                print(soup.prettify())  # print the html
+
+        2.2. In Usage:
+
+                import requests
+                from bs4 import BeautifulSoup
+
+                url = 'https://www.stadion.uz'
+                response = requests.get(url)
+                soup = BeautifulSoup(response.text, 'html.parser')
+
+                logo = soup.find('div', {'id': 'logo_container'})
+                logo_img = logo.find('img')
+                print(logo_img['src'])
+
+    3. Regular expressions are a sequence of characters that define a search pattern.
+        When you search for data in a text, you can use this search pattern to describe what you are searching for.
+        A regular expression can be a single character, or a more complicated pattern.
+        Regular expressions can be used to perform all types of text search and text replace operations.
+
+        3.1. Example/In Usage:
+
+                import re  # pip install regex
+                text = "The rain in Spain"  # any text
+                x = re.search("^The.*Spain$", text)  # search for a string that starts with "The" and ends with "Spain"
+                if (x):  # condition
+                  print("YES! We have a match!")
+                else:
+                  print("No match")
+
+    4. path: main.py
+
+
+
+
